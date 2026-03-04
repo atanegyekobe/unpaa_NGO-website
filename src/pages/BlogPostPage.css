@@ -1,0 +1,282 @@
+.blog-post-page {
+  min-height: 100vh;
+  background: white;
+}
+
+/* Header Image */
+.post-header-image {
+  position: relative;
+  height: 70vh;
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+.post-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-header-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 4rem 2rem 3rem;
+  color: white;
+}
+
+.back-btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+}
+
+.post-header-category {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.post-header-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  max-width: 900px;
+}
+
+.post-header-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Post Content */
+.post-content {
+  padding: 4rem 2rem;
+}
+
+.post-body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.post-body p {
+  margin-bottom: 1.5rem;
+}
+
+.post-body h2 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-body h3 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-body ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.post-body li {
+  margin-bottom: 0.8rem;
+  color: #475569;
+}
+
+.post-body strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.post-body img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+/* Share Section */
+.post-share {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.post-share h3 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.share-btn.facebook {
+  background: #1877f2;
+  color: white;
+}
+
+.share-btn.twitter {
+  background: #1da1f2;
+  color: white;
+}
+
+.share-btn.linkedin {
+  background: #0a66c2;
+  color: white;
+}
+
+.share-btn.email {
+  background: #64748b;
+  color: white;
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Related Posts */
+.related-posts {
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+.related-posts h3 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.related-post-card {
+  position: relative;
+  display: block;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.related-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.related-post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.related-post-card:hover img {
+  transform: scale(1.1);
+}
+
+.related-post-content {
+  padding: 1.5rem;
+  background: white;
+}
+
+.related-category {
+  display: inline-block;
+  background: #ddd6fe;
+  color: #7c3aed;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.related-post-content h4 {
+  color: #1e293b;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.related-post-card:hover h4 {
+  color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .post-header-image {
+    height: 50vh;
+  }
+
+  .post-header-title {
+    font-size: 2rem;
+  }
+
+  .post-header-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .post-body {
+    font-size: 1rem;
+  }
+
+  .post-body h2 {
+    font-size: 1.5rem;
+  }
+
+  .share-buttons {
+    flex-direction: column;
+  }
+
+  .share-btn {
+    width: 100%;
+  }
+
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}

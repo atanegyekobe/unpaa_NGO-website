@@ -1,0 +1,382 @@
+.gallery-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Page Header */
+.gallery-page .page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+}
+
+.back-link:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+  border-color: white;
+}
+
+.gallery-page .page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-page .page-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Gallery Filters */
+.gallery-filters {
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #475569;
+  min-height: 44px;
+}
+
+.filter-btn:hover {
+  background: #e0e7ff;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.filter-btn:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  border-color: #1d4ed8;
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Gallery Grid */
+.gallery-grid-section {
+  padding: 4rem 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+}
+
+.gallery-item:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+  transform: translateY(-8px);
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(37, 99, 235, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus .gallery-overlay {
+  opacity: 1;
+}
+
+.view-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.gallery-caption {
+  padding: 1.5rem;
+}
+
+.gallery-caption h3 {
+  color: #1e293b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  color: #1e293b;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  background: #2563eb;
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.lightbox-close:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  background: white;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.lightbox-caption h2 {
+  color: #1e293b;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.lightbox-caption p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.lightbox-category {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-page .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+  }
+
+  .filter-btn {
+    width: 100%;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-caption {
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .lightbox-caption h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Accessibility - Keyboard Navigation */
+.gallery-item:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+/* Loading State */
+.gallery-image-wrapper img {
+  background: #e2e8f0;
+}
+
+/* Empty State */
+.gallery-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.gallery-empty h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Print Styles */
+@media print {
+  .gallery-filters,
+  .back-link,
+  .lightbox {
+    display: none !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
