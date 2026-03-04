@@ -18,7 +18,7 @@ A professional, fully-featured **multi-page** website for Non-Governmental Organ
 
 ```bash
 # Navigate to the project directory
-cd NEWDA
+cd unpaa_NGO-website
 
 # Install dependencies (including react-router-dom)
 npm install
