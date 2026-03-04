@@ -160,6 +160,9 @@ Deploy to platforms like:
 ## 📝 License
 
 This template is created for NEWDA organization.
+<img width="960" height="540" alt="Capture11" src="https://github.com/user-attachments/assets/9aa9a083-9df5-4bc0-ad4f-54d093b6e8bc" />
+<img width="960" height="540" alt="Capture33" src="https://github.com/user-attachments/assets/544af054-6464-43cc-af56-3e6b2ef229e9" />
+<img width="960" height="540" alt="Capture123" src="https://github.com/user-attachments/assets/503cbd6e-bc4c-4bec-a1d7-a7e6eeb65d39" />
 
 ---
 
