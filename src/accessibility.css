@@ -1,0 +1,345 @@
+/* Accessibility Styles */
+
+/* Skip to Content Link (for keyboard users) */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #2563eb;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 10px;
+}
+
+/* Focus Indicators - Visible and Accessible */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* High Contrast Focus for Dark Backgrounds */
+.hero button:focus,
+.featured-impact a:focus,
+.home-cta button:focus {
+  outline-color: #fbbf24;
+}
+
+/* Focus Visible (only on keyboard, not mouse clicks) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Keyboard Navigation - Visible Focus States */
+.nav-link:focus {
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 5px;
+}
+
+/* Card Focus States */
+.home-card:focus-within,
+.news-card:focus-within,
+.impact-card:focus-within,
+.blog-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+  outline: 3px solid #2563eb;
+}
+
+/* Button Focus States */
+button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Link Focus States */
+a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Ensure Interactive Elements are Keyboard Accessible */
+.slider-arrow:focus,
+.slider-dot:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Form Focus States */
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .nav-link,
+  .footer a,
+  .blog-read-more {
+    text-decoration: underline;
+  }
+
+  button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark Mode Support (respects user preference) */
+@media (prefers-color-scheme: dark) {
+  /* Will add if needed */
+}
+
+/* Ensure Text is Readable */
+body {
+  font-size: 16px; /* Minimum readable size */
+  line-height: 1.5; /* WCAG requirement */
+}
+
+/* Touch Target Size - Minimum 44x44px */
+button,
+a,
+.nav-link,
+.slider-arrow,
+.slider-dot {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure buttons and links are properly sized */
+button {
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Override for specific elements that need different styling */
+.donate-btn,
+.cta-btn,
+.view-all-btn,
+.btn-primary,
+.btn-secondary,
+.control-btn {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 1rem 1.5rem;
+}
+
+.slider-dot {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.5rem;
+}
+
+/* Ensure Sufficient Color Contrast */
+/* Text on white background - must be 4.5:1 ratio */
+.overview-text,
+.news-content p,
+.blog-card-content p {
+  color: #475569; /* Passes WCAG AA */
+}
+
+/* Text on dark background */
+.featured-impact .section-subtitle,
+.impact-card-content p {
+  color: #cbd5e1; /* Passes WCAG AA on dark bg */
+}
+
+/* Links must be distinguishable */
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* Ensure Images Have Context */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Loading States for Screen Readers */
+[aria-busy="true"] {
+  cursor: wait;
+}
+
+/* Form Error States */
+input:invalid:not(:focus),
+textarea:invalid:not(:focus) {
+  border-color: #dc2626;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Success States */
+.success-message {
+  color: #059669;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Ensure Icons Have Text Alternatives */
+.card-icon[aria-hidden="true"] + .sr-only {
+  /* Screen reader will read the alternative text */
+}
+
+/* Table Accessibility (if you add tables later) */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* List Semantics */
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+/* Heading Hierarchy */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+/* Ensure Modals are Accessible (if you add them) */
+[role="dialog"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+[role="dialog"][aria-hidden="true"] {
+  display: none;
+}
+
+/* Focus Trap for Modals */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Loading Spinner Accessibility */
+.loading-spinner[role="status"] {
+  /* Add aria-label="Loading" */
+}
+
+/* Breadcrumb Navigation */
+nav[aria-label="breadcrumb"] ol {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Pagination */
+nav[aria-label="pagination"] {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Status Messages */
+[role="status"],
+[role="alert"] {
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+[role="alert"] {
+  border-left: 4px solid #dc2626;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Keyboard Navigation Helpers */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Print Styles */
+@media print {
+  .nav-toggle,
+  .slider-arrow,
+  .slider-dots,
+  .donate-btn {
+    display: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+  }
+}

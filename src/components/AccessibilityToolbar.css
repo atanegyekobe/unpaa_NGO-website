@@ -1,0 +1,476 @@
+/* Accessibility Toggle Button */
+.accessibility-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.accessibility-toggle.active {
+  background: #1d4ed8;
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  }
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+  background: #1d4ed8;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+.accessibility-toggle:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+  animation: none;
+}
+
+.accessibility-icon {
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.accessibility-toggle.active .accessibility-icon {
+  transform: rotate(90deg);
+}
+
+/* Accessibility Panel - Centered Modal Style */
+.accessibility-panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  max-height: 80vh;
+  width: 450px;
+  max-width: 90vw;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #2563eb;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.close-btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Panel Content */
+.panel-content {
+  padding: 2rem 1.5rem;
+}
+
+.control-group {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.control-group:last-child {
+  border-bottom: none;
+}
+
+.control-group h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.control-description {
+  margin: 0 0 1rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Button Group (Font Size) */
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 0.75rem 1.25rem;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #1e293b;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.control-btn:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  background: #fbbf24;
+  border-color: #f59e0b;
+  color: #78350f;
+}
+
+.reset-btn:hover {
+  background: #f59e0b;
+}
+
+.font-size-display {
+  padding: 0.5rem 1rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+}
+
+.toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #2563eb;
+}
+
+.toggle-btn:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.toggle-btn.active {
+  background: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.toggle-slider {
+  width: 50px;
+  height: 28px;
+  background: #cbd5e1;
+  border-radius: 50px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+.toggle-btn.active .toggle-slider {
+  background: #22c55e;
+}
+
+.toggle-btn.active .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+.toggle-label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.toggle-btn.active .toggle-label {
+  color: white;
+}
+
+/* Reset All Button */
+.reset-all-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-all-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.reset-all-btn:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Panel Footer */
+.panel-footer {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  font-weight: 600;
+  color: #2563eb;
+  padding: 0.5rem 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+summary::before {
+  content: '▶';
+  transition: transform 0.3s;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.shortcuts-list {
+  list-style: none;
+  padding: 1rem 0 0 0;
+  margin: 0;
+}
+
+.shortcuts-list li {
+  padding: 0.5rem 0;
+  color: #64748b;
+}
+
+kbd {
+  background: #e2e8f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  border: 1px solid #cbd5e1;
+}
+
+/* Backdrop */
+.accessibility-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9997;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* High Contrast Mode Styles */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast * {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast a,
+body.high-contrast button {
+  color: #ffff00 !important;
+  text-decoration: underline;
+}
+
+body.high-contrast .nav-link:hover,
+body.high-contrast .nav-link:focus {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+body.high-contrast img {
+  border: 2px solid #fff;
+  filter: contrast(1.2);
+}
+
+body.high-contrast .hero,
+body.high-contrast .featured-impact,
+body.high-contrast .home-cta {
+  background: #000 !important;
+}
+
+body.high-contrast .accessibility-toggle {
+  background: #ffff00 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .accessibility-panel {
+  background: #000 !important;
+  border-left: 3px solid #fff;
+}
+
+body.high-contrast .panel-header {
+  background: #000 !important;
+  border-bottom: 2px solid #fff;
+}
+
+/* Simple Text Mode */
+body.simple-text {
+  line-height: 2 !important;
+  letter-spacing: 0.05em !important;
+}
+
+body.simple-text p,
+body.simple-text li {
+  font-size: 1.1rem !important;
+  line-height: 2 !important;
+  max-width: 70ch;
+}
+
+body.simple-text h1,
+body.simple-text h2,
+body.simple-text h3,
+body.simple-text h4 {
+  margin-top: 2rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .accessibility-panel {
+    width: 90vw;
+    max-height: 85vh;
+  }
+
+  .accessibility-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .accessibility-icon {
+    font-size: 1.5rem;
+  }
+
+  .panel-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Print - Hide Accessibility Controls */
+@media print {
+  .accessibility-toggle,
+  .accessibility-panel,
+  .accessibility-backdrop {
+    display: none !important;
+  }
+}
