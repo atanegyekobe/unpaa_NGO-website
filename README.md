@@ -1,8 +1,8 @@
-# NEWDA - NGO Website
+NGO Website
 
-A professional, fully-featured **multi-page** website for the NEWDA Non-Governmental Organization built with React, Vite, and React Router.
+A professional, fully-featured **multi-page** website for Non-Governmental Organization built with React, Vite, and React Router.
 
-## 🚀 Features
+🚀 Features
 
 - **Multi-Page Architecture** - Separate pages for each section (not just scrolling!)
 - **Responsive Navigation** - Mobile-friendly navbar with smooth page transitions
@@ -14,7 +14,7 @@ A professional, fully-featured **multi-page** website for the NEWDA Non-Governme
 - **Contact Page** - Contact form, info, and FAQ section
 - **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
 
-## 📦 Installation
+📦 Installation
 
 ```bash
 # Navigate to the project directory
@@ -30,7 +30,7 @@ npm run dev
 npm run build
 ```
 
-## 🌐 Website Structure
+🌐 Website Structure
 
 The website is now a **multi-page application** with separate routes:
 
@@ -43,31 +43,31 @@ The website is now a **multi-page application** with separate routes:
 
 Each page has its own route and loads independently!
 
-## 🔧 Customization Guide
+🔧 Customization Guide
 
 All placeholder content is marked with `{/* TODO: Replace with actual ... */}` comments. Here's what you need to update:
 
-### 1. **Logo** (`src/components/Navbar.jsx`)
+1. **Logo** (`src/components/Navbar.jsx`)
 - Replace the text logo with your actual logo image
 - Update line with `<span className="logo-placeholder">NEWDA</span>`
 
-### 2. **Hero Section** (`src/components/Hero.jsx`)
+2. **Hero Section** (`src/components/Hero.jsx`)
 - Replace mission statement
 - Update hero description
 - Optionally add a background image to the hero section in `Hero.css`
 
-### 3. **About Section** (`src/components/About.jsx`)
+3. **About Section** (`src/components/About.jsx`)
 - Replace mission statement
 - Replace vision statement
 - Update organizational values
 - Replace the image placeholder with actual organization image
 
-### 4. **Programs** (`src/components/Programs.jsx`)
+4. **Programs** (`src/components/Programs.jsx`)
 - Update the `programs` array with your actual programs
 - Replace program titles, descriptions, and icons
 - Add more programs by adding objects to the array
 
-### 5. **Impact Section** (`src/components/Impact.jsx`)
+5. **Impact Section** (`src/components/Impact.jsx`)
 - Update statistics in the `stats` array
 - Replace success stories with actual stories
 - Add images to story cards
@@ -77,23 +77,23 @@ All placeholder content is marked with `{/* TODO: Replace with actual ... */}` c
 - Update office hours
 - Connect the form to your backend/email service
 
-### 7. **Footer** (`src/components/Footer.jsx`)
+7. **Footer** (`src/components/Footer.jsx`)
 - Replace tagline
 - Update social media links
 - Add actual social media URLs
 
-### 8. **Colors & Branding**
+8. **Colors & Branding**
 You can update the color scheme by modifying the CSS files:
 - Primary Blue: `#2563eb` (used throughout)
 - Purple Gradient: `#667eea` to `#764ba2` (hero and impact sections)
 - Update these colors globally in the respective CSS files
 
-### 9. **Favicon & Meta Tags** (`index.html`)
+9. **Favicon & Meta Tags** (`index.html`)
 - Replace `/vite.svg` with your organization logo
 - Update meta description
 - Update page title if needed
 
-## 📁 Project Structure
+📁 Project Structure
 
 ```
 NEWDA/
@@ -115,7 +115,7 @@ NEWDA/
 └── package.json
 ```
 
-## 🎨 Adding Images
+🎨 Adding Images
 
 To add images:
 
@@ -129,13 +129,13 @@ To add images:
    <img src={yourImage} alt="Description" />
    ```
 
-## 📧 Connecting Contact Form
+📧 Connecting Contact Form
 
 The contact form currently doesn't submit anywhere. To make it functional:
 
-1. **Option 1**: Use a service like FormSpree, EmailJS, or Netlify Forms
-2. **Option 2**: Connect to your own backend API
-3. **Option 3**: Use mailto link (basic solution)
+1. Option 1: Use a service like FormSpree, EmailJS, or Netlify Forms
+2. Option 2: Connect to your own backend API
+3. Option 3: Use mailto link (basic solution)
 
 Example with EmailJS:
 ```javascript
@@ -150,20 +150,19 @@ const handleSubmit = (e) => {
 }
 ```
 
-## 🌐 Deployment
+🌐 Deployment
 
 Deploy to platforms like:
 - **Vercel**: `vercel deploy`
 - **Netlify**: Connect your Git repository
 - **GitHub Pages**: Update `vite.config.js` with base path
 
-## 📝 License
+📝 License
 
-This template is created for NEWDA organization.
+This template is created for organization.
 <img width="960" height="540" alt="Capture11" src="https://github.com/user-attachments/assets/9aa9a083-9df5-4bc0-ad4f-54d093b6e8bc" />
 <img width="960" height="540" alt="Capture33" src="https://github.com/user-attachments/assets/544af054-6464-43cc-af56-3e6b2ef229e9" />
 <img width="960" height="540" alt="Capture123" src="https://github.com/user-attachments/assets/503cbd6e-bc4c-4bec-a1d7-a7e6eeb65d39" />
 
 ---
 
-Built with ❤️ for NEWDA
