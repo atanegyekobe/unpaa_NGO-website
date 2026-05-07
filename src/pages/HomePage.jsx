@@ -1,9 +1,30 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
+import { getHomeContent } from '../content/contentService'
 import './HomePage.css'
 
 function HomePage() {
+  const [latestNews, setLatestNews] = useState([])
+  const [impactCards, setImpactCards] = useState([])
+
+  useEffect(() => {
+    let isMounted = true
+
+    async function loadContent() {
+      const content = await getHomeContent()
+      if (!isMounted) return
+      setLatestNews(content.latestNews)
+      setImpactCards(content.impactCards)
+    }
+
+    loadContent()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   // Scroll animation observer
   useEffect(() => {
     const observerOptions = {
@@ -36,39 +57,19 @@ function HomePage() {
           <p className="section-subtitle">Stay informed about our recent activities and impact stories</p>
 
           <div className="news-grid">
-            <Link to="/blog/1" className="news-card">
-              <div className="news-image">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="News 1" />
-                <span className="news-badge">New</span>
-              </div>
-              <div className="news-content">
-                <span className="news-date">March 15, 2024</span>
-                <h3>New Community Center Opens</h3>
-                <p>Over 500 families now have access to essential services...</p>
-              </div>
-            </Link>
-
-            <Link to="/blog/2" className="news-card">
-              <div className="news-image">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="News 2" />
-              </div>
-              <div className="news-content">
-                <span className="news-date">March 10, 2024</span>
-                <h3>Education Program Milestone</h3>
-                <p>Successfully reached 1000 students in our programs...</p>
-              </div>
-            </Link>
-
-            <Link to="/blog/3" className="news-card">
-              <div className="news-image">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="News 3" />
-              </div>
-              <div className="news-content">
-                <span className="news-date">March 5, 2024</span>
-                <h3>Healthcare Outreach Success</h3>
-                <p>Provided services to 300+ individuals in remote areas...</p>
-              </div>
-            </Link>
+            {latestNews.map((item) => (
+              <Link key={item.id} to={item.link} className="news-card">
+                <div className="news-image">
+                  <img src={item.image} alt={item.title} />
+                  {item.badge ? <span className="news-badge">{item.badge}</span> : null}
+                </div>
+                <div className="news-content">
+                  <span className="news-date">{item.displayDate}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.excerpt}</p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div className="news-cta">
@@ -82,11 +83,9 @@ function HomePage() {
       {/* Quick Overview Section */}
       <section className="home-overview fade-in-section" aria-labelledby="overview-heading">
         <div className="container">
-          <h2 id="overview-heading">Welcome to NEWDA</h2>
+          <h2 id="overview-heading">Our Mission</h2>
           <p className="overview-text">
-            {/* TODO: Add brief organization overview */}
-            We are dedicated to making a positive impact in communities worldwide through 
-            sustainable development, education, and empowerment initiatives.
+            To empower women with disabilities by advancing their rights, expanding access to opportunities, and fostering collaboration to drive inclusive and sustainable progress.
           </p>
 
           <div className="home-cards">
@@ -134,47 +133,21 @@ function HomePage() {
           </p>
 
           <div className="impact-cards">
-            <Link to="/gallery/community" className="impact-card-link">
-              <article className="impact-card card-1">
-                <div className="impact-card-image">
-                  <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Community members working together on development project" />
-                </div>
-                <div className="impact-card-content">
-                  <h3>Community Development</h3>
-                  <p>Empowering local communities with sustainable resources and education programs.</p>
-                  <span className="view-gallery-hint" aria-hidden="true">📸 View Gallery →</span>
-                </div>
-                <div className="card-glow" aria-hidden="true"></div>
-              </article>
-            </Link>
-
-            <Link to="/gallery/education" className="impact-card-link">
-              <article className="impact-card card-2">
-                <div className="impact-card-image">
-                  <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Children in classroom receiving education" />
-                </div>
-                <div className="impact-card-content">
-                  <h3>Education Initiatives</h3>
-                  <p>Providing access to quality education and learning opportunities for all.</p>
-                  <span className="view-gallery-hint" aria-hidden="true">📸 View Gallery →</span>
-                </div>
-                <div className="card-glow" aria-hidden="true"></div>
-              </article>
-            </Link>
-
-            <Link to="/gallery/healthcare" className="impact-card-link">
-              <article className="impact-card card-3">
-                <div className="impact-card-image">
-                  <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80" alt="Healthcare professionals providing medical care" />
-                </div>
-                <div className="impact-card-content">
-                  <h3>Healthcare Support</h3>
-                  <p>Delivering essential healthcare services to underserved communities.</p>
-                  <span className="view-gallery-hint" aria-hidden="true">📸 View Gallery →</span>
-                </div>
-                <div className="card-glow" aria-hidden="true"></div>
-              </article>
-            </Link>
+            {impactCards.map((card, index) => (
+              <Link key={card.id} to={card.link} className="impact-card-link">
+                <article className={`impact-card card-${index + 1}`}>
+                  <div className="impact-card-image">
+                    <img src={card.image} alt={card.title} />
+                  </div>
+                  <div className="impact-card-content">
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                    <span className="view-gallery-hint" aria-hidden="true">📸 View Gallery →</span>
+                  </div>
+                  <div className="card-glow" aria-hidden="true"></div>
+                </article>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

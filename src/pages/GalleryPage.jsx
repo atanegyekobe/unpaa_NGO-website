@@ -1,115 +1,35 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { getGalleryContent } from '../content/contentService'
 import './GalleryPage.css'
 
 function GalleryPage() {
   const { category } = useParams()
   const [selectedImage, setSelectedImage] = useState(null)
   const [activeCategory, setActiveCategory] = useState(category || 'all')
+  const [galleryImages, setGalleryImages] = useState({ community: [], education: [], healthcare: [] })
+  const [filteredImages, setFilteredImages] = useState([])
 
-  // Gallery images organized by category
-  const galleryImages = {
-    community: [
-      {
-        id: 1,
-        url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80',
-        title: 'Community Workshop',
-        description: 'Local community members participating in skill development workshop',
-        category: 'Community Development'
-      },
-      {
-        id: 2,
-        url: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80',
-        title: 'Community Meeting',
-        description: 'Gathering to discuss community needs and solutions',
-        category: 'Community Development'
-      },
-      {
-        id: 3,
-        url: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&q=80',
-        title: 'Resource Distribution',
-        description: 'Distributing essential resources to community members',
-        category: 'Community Development'
-      },
-      {
-        id: 4,
-        url: 'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800&q=80',
-        title: 'Infrastructure Development',
-        description: 'Building sustainable infrastructure for communities',
-        category: 'Community Development'
-      }
-    ],
-    education: [
-      {
-        id: 5,
-        url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
-        title: 'Classroom Learning',
-        description: 'Students engaged in interactive learning activities',
-        category: 'Education'
-      },
-      {
-        id: 6,
-        url: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80',
-        title: 'Outdoor Education',
-        description: 'Children participating in outdoor learning programs',
-        category: 'Education'
-      },
-      {
-        id: 7,
-        url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
-        title: 'Technology Training',
-        description: 'Computer literacy training for students',
-        category: 'Education'
-      },
-      {
-        id: 8,
-        url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80',
-        title: 'Library Resources',
-        description: 'Students accessing educational resources in library',
-        category: 'Education'
-      }
-    ],
-    healthcare: [
-      {
-        id: 9,
-        url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
-        title: 'Medical Checkup',
-        description: 'Healthcare professionals providing medical examinations',
-        category: 'Healthcare'
-      },
-      {
-        id: 10,
-        url: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80',
-        title: 'Health Outreach',
-        description: 'Mobile health clinic reaching remote communities',
-        category: 'Healthcare'
-      },
-      {
-        id: 11,
-        url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
-        title: 'Vaccination Program',
-        description: 'Community vaccination and immunization program',
-        category: 'Healthcare'
-      },
-      {
-        id: 12,
-        url: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80',
-        title: 'Health Education',
-        description: 'Teaching health and wellness practices to communities',
-        category: 'Healthcare'
-      }
-    ]
-  }
+  useEffect(() => {
+    setActiveCategory(category || 'all')
+  }, [category])
 
-  // Get all images or filtered by category
-  const getFilteredImages = () => {
-    if (activeCategory === 'all') {
-      return [...galleryImages.community, ...galleryImages.education, ...galleryImages.healthcare]
+  useEffect(() => {
+    let isMounted = true
+
+    async function loadGallery() {
+      const content = await getGalleryContent(activeCategory)
+      if (!isMounted) return
+      setGalleryImages(content.categories)
+      setFilteredImages(content.images)
     }
-    return galleryImages[activeCategory] || []
-  }
 
-  const filteredImages = getFilteredImages()
+    loadGallery()
+
+    return () => {
+      isMounted = false
+    }
+  }, [activeCategory])
 
   // Close lightbox with ESC key
   useEffect(() => {
@@ -154,7 +74,7 @@ function GalleryPage() {
               aria-pressed={activeCategory === 'all'}
               aria-label="Show all gallery images"
             >
-              All Images ({galleryImages.community.length + galleryImages.education.length + galleryImages.healthcare.length})
+              All Images ({(galleryImages.community?.length ?? 0) + (galleryImages.education?.length ?? 0) + (galleryImages.healthcare?.length ?? 0)})
             </button>
             <button
               className={`filter-btn ${activeCategory === 'community' ? 'active' : ''}`}
@@ -162,7 +82,7 @@ function GalleryPage() {
               aria-pressed={activeCategory === 'community'}
               aria-label="Show community development images"
             >
-              Community ({galleryImages.community.length})
+              Community ({galleryImages.community?.length ?? 0})
             </button>
             <button
               className={`filter-btn ${activeCategory === 'education' ? 'active' : ''}`}
@@ -170,7 +90,7 @@ function GalleryPage() {
               aria-pressed={activeCategory === 'education'}
               aria-label="Show education program images"
             >
-              Education ({galleryImages.education.length})
+              Education ({galleryImages.education?.length ?? 0})
             </button>
             <button
               className={`filter-btn ${activeCategory === 'healthcare' ? 'active' : ''}`}
@@ -178,7 +98,7 @@ function GalleryPage() {
               aria-pressed={activeCategory === 'healthcare'}
               aria-label="Show healthcare program images"
             >
-              Healthcare ({galleryImages.healthcare.length})
+              Healthcare ({galleryImages.healthcare?.length ?? 0})
             </button>
           </div>
         </div>
