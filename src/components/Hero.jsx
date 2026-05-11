@@ -2,29 +2,29 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
+// Local hero images (place your images in src/assets/)
+import hero1 from '../assets/Cecilia_fofo_Ashaley_pic_about .jpg'
+import hero2 from '../assets/disability_inclusion_hero_team.jpeg'
+//import hero2 from '../assets/hero_2.jpg'
+//import hero3 from '../assets/hero_3.jpg'
+
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // TODO: Replace these placeholder images with your actual images
-  // Place images in src/assets/ and import them, or use external URLs
+  // Hero slides (now using local images). Add files under `src/assets/` if you want more slides
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80',
-      title: 'NEWDA',
-      subtitle: 'Making a Difference in Communities',
-      description: 'Empowering communities through sustainable development'
-    },
+      image: hero1,
+      title: 'Women with Disabilities',
+      subtitle: 'Leading Change in Communities',
+      description: 'Empowering women with disabilities through advocacy, peer support, and sustainable development'
+    }
+    ,
     {
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80',
-      title: 'Transform Lives',
-      subtitle: 'Creating Lasting Impact',
-      description: 'Join us in our mission to create positive change'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920&q=80',
-      title: 'Together We Can',
-      subtitle: 'Build a Better Tomorrow',
-      description: 'Your support makes all the difference'
+      image: hero2,
+      title: 'Inclusion in Action',
+      subtitle: 'Programs for Women with Disabilities',
+      description: 'Building skills, confidence, and opportunities through training and outreach initiatives'
     }
   ]
 

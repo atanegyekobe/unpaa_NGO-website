@@ -54,6 +54,7 @@ function HomePage() {
       <section className="latest-news fade-in-section">
         <div className="container">
           <h2 className="section-title">Latest News & Updates</h2>
+          <p> </p>
           <p className="section-subtitle">Stay informed about our recent activities and impact stories</p>
 
           <div className="news-grid">
