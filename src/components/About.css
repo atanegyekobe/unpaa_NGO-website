@@ -56,17 +56,12 @@
   align-items: center;
 }
 
-.image-placeholder {
+.about-image-photo {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  font-size: 1.2rem;
-  font-weight: 500;
+  object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 768px) {

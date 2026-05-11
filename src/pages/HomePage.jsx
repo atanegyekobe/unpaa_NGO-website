@@ -85,7 +85,7 @@ function HomePage() {
         <div className="container">
           <h2 id="overview-heading">Our Mission</h2>
           <p className="overview-text">
-            To empower women with disabilities by advancing their rights, expanding access to opportunities, and fostering collaboration to drive inclusive and sustainable progress.
+            
           </p>
 
           <div className="home-cards">
@@ -93,23 +93,23 @@ function HomePage() {
               <article className="home-card">
                 <div className="card-icon" aria-hidden="true">🎯</div>
                 <h3>Our Mission</h3>
-                <p>Creating lasting change through community-focused programs and partnerships.</p>
+                <p>To empower women with disabilities by advancing their rights, expanding access to opportunities, and fostering collaboration to drive inclusive and sustainable progress.</p>
               </article>
             </Link>
 
             <Link to="/impact" className="home-card-link">
               <article className="home-card">
                 <div className="card-icon" aria-hidden="true">🌍</div>
-                <h3>Global Reach</h3>
-                <p>Working across multiple regions to support those who need it most.</p>
+                <h3>Mission</h3>
+                <p>An inclusive society where all women with disabilities in Ghana and across Africa thrive with equity, dignity, and full participation in every aspect of life.</p>
               </article>
             </Link>
 
             <Link to="/get-involved" className="home-card-link">
               <article className="home-card">
                 <div className="card-icon" aria-hidden="true">💪</div>
-                <h3>Get Involved</h3>
-                <p>Join us in making a difference through volunteering, donations, or partnerships.</p>
+                <h3>General Goals</h3>
+                <p>To promote the empowerment and inclusion of women with disabilities through the advancement of their rights, equitable access to opportunities, and active participation in social, economic and political life.</p>
               </article>
             </Link>
           </div>

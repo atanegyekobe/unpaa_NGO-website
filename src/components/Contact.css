@@ -52,11 +52,23 @@
 
 /* Social links styling */
 .info-item .social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #2563eb;
   text-decoration: none;
 }
 .info-item .social-links a:hover {
   text-decoration: underline;
+}
+
+.info-item .social-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .contact-form {

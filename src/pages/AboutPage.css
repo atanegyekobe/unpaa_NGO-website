@@ -59,6 +59,15 @@
   font-weight: 500;
 }
 
+.member-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
 .team-member h3 {
   color: #1e293b;
   margin-bottom: 0.5rem;

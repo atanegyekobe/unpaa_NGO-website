@@ -1,5 +1,7 @@
 import About from '../components/About'
 import './AboutPage.css'
+import profNaami from '../assets/prof_naami_pic_about.jpeg'
+import madVeronica from '../assets/mad_victoria_kofiedu_pic_about.jpeg'
 
 function AboutPage() {
   return (
@@ -24,21 +26,18 @@ function AboutPage() {
 
           <div className="team-grid" role="list">
             <article className="team-member" role="listitem">
-              <div className="member-photo-placeholder" role="img" aria-label="Photo of Executive Director">
-                <span aria-hidden="true">Photo</span>
-              </div>
-              <h3>Team Member Name</h3>
-              <p className="member-role">Executive Director</p>
-              <p className="member-bio">Brief bio about the team member goes here.</p>
+              <img className="member-photo" src={profNaami} alt="Prof Augustna Naami" />
+              <h3>Prof Augustna Naami</h3>
+              <p className="member-role">Associate Professor of Disability and Social Work at the Department of Social Work, University of Ghana</p>
+              <p className="member-bio"> Read more about Prof Augustna Naami's background and contributions.</p>
             </article>
 
             <article className="team-member" role="listitem">
-              <div className="member-photo-placeholder" role="img" aria-label="Photo of Program Director">
-                <span aria-hidden="true">Photo</span>
-              </div>
-              <h3>Team Member Name</h3>
-              <p className="member-role">Program Director</p>
-              <p className="member-bio">Brief bio about the team member goes here.</p>
+              <img className="member-photo" src={madVeronica} alt="Madam Veronica Kofiedu" />
+              <h3>Madam Veronica Kofiedu</h3>
+              <p className="member-role"> Founder and Executive Director of the Women with Disability Development
+and Advocacy Organization (WODAO)</p>
+              <p className="member-bio">Read more about Madam Veronica Kofiedu's background and contributions.</p>
             </article>
 
             <article className="team-member" role="listitem">
