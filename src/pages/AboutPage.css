@@ -3,7 +3,12 @@
 }
 
 .page-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.78) 0%, rgba(118, 75, 162, 0.78) 100%),
+    url('../assets/about_banner_like.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 6rem 2rem 4rem;
   text-align: center;

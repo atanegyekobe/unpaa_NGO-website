@@ -1,3 +1,7 @@
+import newsCommunityImage from '../assets/Cecilia_fofo_Ashaley_pic_about .jpeg'
+import newsEducationImage from '../assets/prof_naami_pic_about.jpeg'
+import newsHealthcareImage from '../assets/mad_victoria_kofiedu_pic_about.jpeg'
+
 export const siteContent = {
   home: {
     latestNews: [
@@ -5,7 +9,7 @@ export const siteContent = {
         id: 1,
         title: 'New Community Center Opens',
         excerpt: 'Over 500 families now have access to essential services...',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+        image: newsCommunityImage,
         date: '2024-03-15',
         badge: 'New',
         link: '/blog/1'
@@ -14,7 +18,7 @@ export const siteContent = {
         id: 2,
         title: 'Education Program Milestone',
         excerpt: 'Successfully reached 1000 students in our programs...',
-        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
+        image: newsEducationImage,
         date: '2024-03-10',
         link: '/blog/2'
       },
@@ -22,7 +26,7 @@ export const siteContent = {
         id: 3,
         title: 'Healthcare Outreach Success',
         excerpt: 'Provided services to 300+ individuals in remote areas...',
-        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80',
+        image: newsHealthcareImage,
         date: '2024-03-05',
         link: '/blog/3'
       }

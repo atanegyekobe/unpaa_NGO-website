@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './Hero.css'
 
 // Local hero images (place your images in src/assets/)
-import hero1 from '../assets/Cecilia_fofo_Ashaley_pic_about .jpg'
+import hero1 from '../assets/Cecilia_fofo_Ashaley_pic_about .jpeg'
 import hero2 from '../assets/disability_inclusion_hero_team.jpeg'
 //import hero2 from '../assets/hero_2.jpg'
 //import hero3 from '../assets/hero_3.jpg'

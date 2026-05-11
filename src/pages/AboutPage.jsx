@@ -8,8 +8,7 @@ function AboutPage() {
     <div className="about-page">
       <div className="page-header">
         <div className="container">
-          <h1>About NEWDA</h1>
-          <p>Learn more about our organization, mission, and values</p>
+         
         </div>
       </div>
       

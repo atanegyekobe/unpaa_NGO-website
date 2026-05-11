@@ -1,5 +1,5 @@
 import './About.css'
-import aboutImage from '../assets/Cecilia_fofo_Ashaley_pic_about .jpg'
+import aboutImage from '../assets/NEWDA LOGO.png'
 
 function About() {
   return (

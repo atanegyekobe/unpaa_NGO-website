@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import './BlogPostPage.css'
+import postHeaderImage from '../assets/Cecilia_fofo_Ashaley_pic_about .jpeg'
 
 function BlogPostPage() {
   const { id } = useParams()
@@ -7,14 +8,16 @@ function BlogPostPage() {
   // TODO: Replace with actual blog post data from your CMS
   const post = {
     id: 1,
-    title: 'New Community Center Opens in Rural District',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+    title: 'Women with Disabilities Making Impact in Communities and the World',
+    image: postHeaderImage,
     date: 'March 15, 2024',
     author: 'NEWDA Team',
     category: 'Community Development',
     readTime: '5 min read',
     content: `
-      <p>We are incredibly excited to announce the grand opening of our new community center in the rural district of [Location Name]. This milestone represents months of planning, fundraising, and collaboration with local community members.</p>
+      <p>
+Cecilia fofo Ashaley is a mother with 9 years lived experience of psychosocial disability, with five year working experience in the mental health space, advocating for the right of persons with disabilities, providing peer support and contributing to research in the area of mental health.
+.</p>
 
       <h2>A Space for Everyone</h2>
       <p>The new 5,000 square foot facility includes:</p>
@@ -76,10 +79,12 @@ function BlogPostPage() {
           <div className="post-share">
             <h3>Share this story</h3>
             <div className="share-buttons">
-              <button className="share-btn facebook">📘 Facebook</button>
-              <button className="share-btn twitter">🐦 Twitter</button>
-              <button className="share-btn linkedin">💼 LinkedIn</button>
-              <button className="share-btn email">📧 Email</button>
+              <a className="share-btn facebook" href="https://www.facebook.com/NEWDAOfficial" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+              <a className="share-btn linkedin" href="https://www.linkedin.com/company/NEWDAOFFICIAL" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+              <a className="share-btn instagram" href="https://www.instagram.com/newdaofficial" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
+              <a className="share-btn youtube" href="https://www.youtube.com/@NEWDAOFFICIAL" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+              <a className="share-btn tiktok" href="https://www.tiktok.com/@newda.official" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
+              <a className="share-btn email" href="mailto:newda2025@gmail.com?subject=Story%20from%20NEWDA">📧 Email</a>
             </div>
           </div>
 
