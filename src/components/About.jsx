@@ -8,13 +8,7 @@ function About() {
         <h2 id="about-heading" className="section-title"></h2>
         <div className="about-content">
           <div className="about-text">
-            <h3>Our Mission</h3>
-            <p>
-              {/* TODO: Replace with actual mission */}
-              Cecilia fofo Ashaley is a mother with 9 years lived experience of psychosocial disability, with five year working experience in the mental health space, advocating for the right of persons with disabilities, providing peer support and contributing to research in the are of mental health.
-            </p>
-
-            
+           
           </div>
           
           <div className="about-image">
@@ -23,6 +17,23 @@ function About() {
               src={aboutImage}
               alt="Cecilia Fofo Ashaley"
             />
+          </div>
+
+          <div className="about-cards" aria-label="About highlights">
+            <article className="about-card">
+              <h3>Our Mission</h3>
+              <p>To empower women with disabilities by advancing their rights, expanding access to opportunities, and fostering collaboration for inclusive and sustainable progress.</p>
+            </article>
+
+            <article className="about-card">
+              <h3>Our Vision</h3>
+              <p>An inclusive society where all women with disabilities in Ghana and across Africa thrive with equity, dignity, and full participation in every aspect of life.</p>
+            </article>
+
+            <article className="about-card">
+              <h3>General Goals</h3>
+              <p>To promote empowerment and inclusion through rights advocacy, equitable access to opportunities, and active participation in social, economic, and political life.</p>
+            </article>
           </div>
         </div>
       </div>
