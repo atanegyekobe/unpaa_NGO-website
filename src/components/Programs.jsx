@@ -27,10 +27,10 @@ function Programs() {
   return (
     <section className="programs">
       <div className="container">
-        <h2 className="section-title">Our Programs</h2>
+        <h2 className="section-title"></h2>
         <p className="section-subtitle">
           {/* TODO: Replace with actual description */}
-          We offer a range of programs designed to create lasting impact in communities
+         
         </p>
         
         <div className="programs-grid">

@@ -19,8 +19,7 @@ function Navbar() {
           <li><Link to="/" className="nav-link" onClick={closeMenu}>Home</Link></li>
           <li><Link to="/about" className="nav-link" onClick={closeMenu}>About</Link></li>
           <li><Link to="/programs" className="nav-link" onClick={closeMenu}>Programs</Link></li>
-          <li><Link to="/impact" className="nav-link" onClick={closeMenu}>Impact</Link></li>
-          <li><Link to="/blog" className="nav-link" onClick={closeMenu}>News</Link></li>
+          {/* Impact and News temporarily removed from navigation */}
           <li><Link to="/get-involved" className="nav-link" onClick={closeMenu}>Get Involved</Link></li>
           <li><Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link></li>
           <li><button className="donate-btn" aria-label="Donate to NEWDA">Donate Now</button></li>

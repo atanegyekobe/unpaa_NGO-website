@@ -8,7 +8,7 @@ function AboutPage() {
     <div className="about-page">
       <div className="page-header">
         <div className="container">
-         
+         <p><h3>About Us</h3></p>
         </div>
       </div>
       
