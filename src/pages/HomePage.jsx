@@ -58,7 +58,7 @@ function HomePage() {
 
           <div className="news-grid">
             {latestNews.map((item) => (
-              <Link key={item.id} to={item.link} className="news-card">
+              <Link key={item.id} to={item.link} className={`news-card ${item.id === 1 ? 'news-featured-top' : ''}`}>
                 <div className="news-image">
                   <img src={item.image} alt={item.title} />
                   {item.badge ? <span className="news-badge">{item.badge}</span> : null}
@@ -72,11 +72,7 @@ function HomePage() {
             ))}
           </div>
 
-          <div className="news-cta">
-            <Link to="/blog">
-              <button className="view-all-btn">View All News →</button>
-            </Link>
-          </div>
+          
         </div>
       </section>
 
@@ -100,7 +96,7 @@ function HomePage() {
             <Link to="/impact" className="home-card-link">
               <article className="home-card">
                 <div className="card-icon" aria-hidden="true">🌍</div>
-                <h3>Mission</h3>
+                <h3>Vision</h3>
                 <p>An inclusive society where all women with disabilities in Ghana and across Africa thrive with equity, dignity, and full participation in every aspect of life.</p>
               </article>
             </Link>

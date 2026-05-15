@@ -1,4 +1,4 @@
-.home-page {
+ .home-page {
   min-height: 100vh;
 }
 
@@ -88,8 +88,8 @@
 
 .home-card {
   background: #f8fafc;
-  padding: 2.5rem;
-  border-radius: 10px;
+  padding: 3rem;
+  border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid #e2e8f0;
@@ -99,23 +99,25 @@
 
 .home-card-link:hover .home-card {
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
-  border-color: #2563eb;
+  border-color: #8d22bf;
 }
 
 .card-icon {
-  font-size: 3.5rem;
+  font-size: 4.6rem;
   margin-bottom: 1rem;
 }
 
 .home-card h3 {
-  color: #2563eb;
+  color: #8d22bf;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.1;
 }
 
 .home-card p {
-  color: #64748b;
+  color: #041322;
   line-height: 1.6;
+  font-size: 1.12rem;
 }
 
 .home-cta {
@@ -177,6 +179,18 @@
 @media (max-width: 768px) {
   .home-cards {
     grid-template-columns: 1fr;
+  }
+
+  .card-icon {
+    font-size: 3.2rem;
+  }
+
+  .home-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-card p {
+    font-size: 1rem;
   }
 
   .home-overview h2,
@@ -516,6 +530,35 @@
 .news-content p {
   color: #64748b;
   line-height: 1.6;
+}
+
+/* Visual feature: lift the primary news item (id=1) above the others */
+.news-card.news-featured-top {
+.news-card.news-featured-top {
+  /* use negative margin so layout doesn't jitter from transforms */
+  margin-top: -36px;
+  z-index: 60;
+  box-shadow: 0 30px 60px rgba(2,6,23,0.2);
+  border-radius: 14px;
+  position: relative;
+}
+
+.news-card.news-featured-top .news-image {
+  height: 260px;
+}
+
+/* Ensure grid allows visible overlap and make cards positioned */
+.news-grid {
+  overflow: visible;
+}
+
+.news-card {
+  position: relative;
+}
+
+/* Push other cards slightly down so the featured card visually overlaps */
+.news-card:not(.news-featured-top) {
+  margin-top: 18px;
 }
 
 .news-cta {

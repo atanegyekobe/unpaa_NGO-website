@@ -2,7 +2,6 @@ import Programs from '../components/Programs'
 import introImage from '../assets/disability_inclusion_hero_team.jpeg'
 import valuesImage from '../assets/prof_naami_pic_about.jpeg'
 import goalsImage from '../assets/mad_victoria_kofiedu_pic_about.jpeg'
-import processImage from '../assets/about_banner_like.jpg'
 import './ProgramsPage.css'
 
 function ProgramsPage() {
@@ -20,7 +19,11 @@ function ProgramsPage() {
           <span className="eyebrow">What drives the work</span>
           <h2 id="programs-intro-heading">Built to turn advocacy into practical change.</h2>
           <p>
-            Our programs combine rights-based advocacy, skills development, community awareness, and partnerships so women with disabilities can lead, participate, and thrive.
+            Our programs combine rights-based advocacy, skills development, community awareness, and partnerships so women with disabilities can lead, participate, and thrive.Partnership and Support
+This project was made possible through the generous support of our donors and partners, including [Partner Names]. We are grateful for the community's involvement in every step of the process, from design to construction.
+
+Looking Forward
+The opening of this community center is just the beginning. We have plans to expand our programming and services based on community needs and feedback. We invite everyone to visit the center and become part of this exciting new chapter for our community.
           </p>
         </div>
 
@@ -41,7 +44,7 @@ function ProgramsPage() {
       <section className="core-values container" aria-labelledby="core-values-heading">
         <div className="section-kicker">
           <span>Principles</span>
-          <p>The standards that shape how we show up, serve, and collaborate.</p>
+    
         </div>
         <div className="section-split">
           <div className="section-split__content">
@@ -108,32 +111,32 @@ function ProgramsPage() {
             <div className="goal-groups">
               <article className="goal-card">
                 <h3>Rights & Policy</h3>
-                <ol>
-                  <li>To promote the recognition, protection, and enforcement of the rights of women with disabilities in line with national laws and international conventions.</li>
-                  <li>To advocate for and support the development, implementation, and monitoring of inclusive policies, plans, and programs at local, national, and regional levels.</li>
-                </ol>
+                <div className="goal-points">
+                  <p>To promote the recognition, protection, and enforcement of the rights of women with disabilities in line with national laws and international conventions.</p>
+                  <p>To advocate for and support the development, implementation, and monitoring of inclusive policies, plans, and programs at local, national, and regional levels.</p>
+                </div>
               </article>
 
               <article className="goal-card">
                 <h3>Education, Skills & Livelihoods</h3>
-                <ol>
-                  <li>To enhance access to quality education, vocational training, employment, and entrepreneurship opportunities for women with disabilities.</li>
-                </ol>
+                <div className="goal-points">
+                  <p>To enhance access to quality education, vocational training, employment, and entrepreneurship opportunities for women with disabilities.</p>
+                </div>
               </article>
 
               <article className="goal-card">
                 <h3>Leadership & Participation</h3>
-                <ol>
-                  <li>To build the skills, confidence, and leadership abilities of women with disabilities to enable their meaningful participation in decision-making processes.</li>
-                </ol>
+                <div className="goal-points">
+                  <p>To build the skills, confidence, and leadership abilities of women with disabilities to enable their meaningful participation in decision-making processes.</p>
+                </div>
               </article>
 
               <article className="goal-card">
                 <h3>Awareness & Partnerships</h3>
-                <ol>
-                  <li>To raise awareness and challenge stigma, discrimination, and harmful practices affecting women with disabilities.</li>
-                  <li>To establish and strengthen partnerships with government institutions, civil society organizations, development partners, and the private sector to influence policy and programs that benefit women with disabilities.</li>
-                </ol>
+                <div className="goal-points">
+                  <p>To raise awareness and challenge stigma, discrimination, and harmful practices affecting women with disabilities.</p>
+                  <p>To establish and strengthen partnerships with government institutions, civil society organizations, development partners, and the private sector to influence policy and programs that benefit women with disabilities.</p>
+                </div>
               </article>
             </div>
           </div>
@@ -151,36 +154,33 @@ function ProgramsPage() {
           </div>
           <h2 id="how-it-works-heading" className="section-title">How Our Programs Work</h2>
           <div className="process-layout">
-            <figure className="section-visual section-visual--process">
-              <img src={processImage} alt="Community-centered program activity in progress" />
-              <figcaption className="image-caption">A practical process that keeps implementation visible and accountable.</figcaption>
-            </figure>
+            
 
-            <ol className="process-steps" role="list">
-              <li className="step" role="listitem">
+            <div className="process-grid">
+              <article className="step-card">
                 <div className="step-number" aria-hidden="true">1</div>
                 <h3>Identify Needs</h3>
                 <p>We work closely with communities to understand their specific challenges and requirements.</p>
-              </li>
+              </article>
 
-              <li className="step" role="listitem">
+              <article className="step-card">
                 <div className="step-number" aria-hidden="true">2</div>
                 <h3>Develop Solutions</h3>
                 <p>Our team creates tailored programs that address the identified needs effectively.</p>
-              </li>
+              </article>
 
-              <li className="step" role="listitem">
+              <article className="step-card">
                 <div className="step-number" aria-hidden="true">3</div>
                 <h3>Implement & Support</h3>
                 <p>We execute programs with continuous monitoring and support for sustainable impact.</p>
-              </li>
+              </article>
 
-              <li className="step" role="listitem">
+              <article className="step-card">
                 <div className="step-number" aria-hidden="true">4</div>
                 <h3>Measure Impact</h3>
                 <p>We track outcomes and share results transparently with our supporters and communities.</p>
-              </li>
-            </ol>
+              </article>
+            </div>
           </div>
         </div>
       </section>

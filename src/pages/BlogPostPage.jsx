@@ -10,7 +10,7 @@ function BlogPostPage() {
     id: 1,
     title: 'Women with Disabilities Making Impact in Communities and the World',
     image: postHeaderImage,
-    date: 'March 15, 2024',
+    date: 'May 15, 2026',
     author: 'NEWDA Team',
     category: 'Community Development',
     readTime: '5 min read',

@@ -1,33 +1,33 @@
 import newsCommunityImage from '../assets/Cecilia_fofo_Ashaley_pic_about .jpeg'
-import newsEducationImage from '../assets/prof_naami_pic_about.jpeg'
-import newsHealthcareImage from '../assets/mad_victoria_kofiedu_pic_about.jpeg'
+import newsEducationImage from '../assets/NEWDA LOGO.png'
+import newsHealthcareImage from '../assets/NEWDA LOGO.png'
 
 export const siteContent = {
   home: {
     latestNews: [
       {
         id: 1,
-        title: 'New Community Center Opens',
-        excerpt: 'Over 500 families now have access to essential services...',
+        title: 'Community Development Impact',
+        excerpt: 'Cecilia fofo Ashaley is a mother with 9 years lived experience ...',
         image: newsCommunityImage,
-        date: '2024-03-15',
+        date: '2026-05-15',
         badge: 'New',
         link: '/blog/1'
       },
       {
         id: 2,
-        title: 'Education Program Milestone',
-        excerpt: 'Successfully reached 1000 students in our programs...',
+        title: '',
+        excerpt: ' Loading...',
         image: newsEducationImage,
-        date: '2024-03-10',
+        date: '2026-05-10',
         link: '/blog/2'
       },
       {
         id: 3,
-        title: 'Healthcare Outreach Success',
-        excerpt: 'Provided services to 300+ individuals in remote areas...',
+        title: '',
+        excerpt: 'Loading...',
         image: newsHealthcareImage,
-        date: '2024-03-05',
+        date: '2026-05-05',
         link: '/blog/3'
       }
     ],
@@ -35,21 +35,21 @@ export const siteContent = {
       {
         id: 'community',
         title: 'Community Development',
-        description: 'Empowering local communities with sustainable resources and education programs.',
+        description: 'Enhanced participation of women with disabilities in local development planning and community initiatives.',
         image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
         link: '/gallery/community'
       },
       {
         id: 'education',
         title: 'Education Initiatives',
-        description: 'Providing access to quality education and learning opportunities for all.',
+        description: 'Increased access to education, vocational training, leadership development, and digital skills opportunities for women with disabilities.',
         image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
         link: '/gallery/education'
       },
       {
-        id: 'healthcare',
-        title: 'Healthcare Support',
-        description: 'Delivering essential healthcare services to underserved communities.',
+        id: 'Social Inclusion',
+        title: 'Social Inclusion',
+        description: 'Stronger peer support networks and solidarity among women with disabilities across communities',
         image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80',
         link: '/gallery/healthcare'
       }
