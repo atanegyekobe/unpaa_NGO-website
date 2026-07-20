@@ -33,7 +33,8 @@ select:focus {
 /* High Contrast Focus for Dark Backgrounds */
 .hero button:focus,
 .featured-impact a:focus,
-.home-cta button:focus {
+.home-cta button:focus,
+.quoteWWA button:focus {
   outline-color: #fbbf24;
 }
 
@@ -112,6 +113,37 @@ textarea:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Global button colour override requested: solid purple background and white text */
+button,
+.cta-btn,
+.btn-primary,
+.btn-secondary,
+.view-all-btn,
+.newsletter-form button {
+  background: #430279 !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.cta-btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.view-all-btn:hover,
+.newsletter-form button:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+
+/* Ensure focus remains visible when buttons have dark background */
+button:focus,
+.cta-btn:focus,
+.btn-primary:focus,
+.btn-secondary:focus,
+.view-all-btn:focus {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
 }
 
 /* High Contrast Mode Support */

@@ -108,7 +108,7 @@
 }
 
 .home-card h3 {
-  color: #8d22bf;
+  color: #430279;
   margin-bottom: 1rem;
   font-size: 2rem;
   line-height: 1.1;
@@ -138,6 +138,85 @@
   opacity: 0.95;
 }
 
+.quoteWWA {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.78), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.55), transparent 28%),
+    linear-gradient(135deg, #f8fafc 0%, #eef2ff 48%, #e0f2fe 100%);
+  color: #0f172a;
+  text-align: center;
+}
+
+.quoteWWA::before,
+.quoteWWA::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.quoteWWA::before {
+  width: 220px;
+  height: 220px;
+  left: -70px;
+  top: -40px;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.quoteWWA::after {
+  width: 280px;
+  height: 280px;
+  right: -110px;
+  bottom: -110px;
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.quoteWWA .container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.quoteWWA h2 {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.quoteWWA h2::after {
+  content: '';
+  display: block;
+  width: 92px;
+  height: 5px;
+  margin: 0.85rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ef44b6 0%, #c26da1 55%, #c5228f 100%);
+}
+
+.quoteWWA p {
+  max-width: 54ch;
+  margin: 0 auto 2rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+  color: #334155;
+}
+
 .cta-buttons {
   display: flex;
   gap: 1rem;
@@ -149,15 +228,16 @@
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 999px;
   cursor: pointer;
   font-weight: 600;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-btn.primary {
-  background: white;
-  color: #667eea;
+  background: linear-gradient(135deg, #430279 0%, #430279 100%);
+  color: white;
+  box-shadow: 0 14px 28px rgba(103, 18, 240, 0.24);
 }
 
 .cta-btn.secondary {
@@ -167,13 +247,34 @@
 }
 
 .cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.2);
 }
 
 .cta-btn.secondary:hover {
   background: white;
   color: #667eea;
+}
+
+.quoteWWA .cta-buttons {
+  margin-top: 0.5rem;
+}
+
+.quoteWWA .cta-btn.primary {
+  position: relative;
+  overflow: hidden;
+  padding-right: 3rem;
+}
+
+.quoteWWA .cta-btn.primary::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.quoteWWA .cta-btn.primary:hover::after {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
@@ -196,6 +297,19 @@
   .home-overview h2,
   .home-cta h2 {
     font-size: 2rem;
+  }
+
+  .quoteWWA {
+    padding: 4.5rem 1rem;
+  }
+
+  .quoteWWA .container {
+    padding: 2.25rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .quoteWWA p {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -533,7 +647,7 @@
 }
 
 /* Visual feature: lift the primary news item (id=1) above the others */
-.news-card.news-featured-top {
+
 .news-card.news-featured-top {
   /* use negative margin so layout doesn't jitter from transforms */
   margin-top: -36px;
@@ -576,6 +690,21 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+/* Hero overlap adjustments: pull latest-news up under the ribbon */
+.latest-news {
+  margin-top: 0;
+  padding-top: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .latest-news {
+    margin-top: 1rem;
+    padding-top: 1rem !important;
+  }
+}
+
+
 
 .view-all-btn:hover {
   background: #1d4ed8;

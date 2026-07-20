@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
+import heroBg from '../assets/disability_inclusion_hero_team.jpeg'
 import { getHomeContent } from '../content/contentService'
 import './HomePage.css'
+import heroStyles from './HomeHero.module.css'
 
 function HomePage() {
   const [latestNews, setLatestNews] = useState([])
@@ -48,7 +50,28 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <Hero />
+      <section className={heroStyles.hero} role="region" aria-label="Hero">
+        <div className={heroStyles.hero__bg} style={{ backgroundImage: `url(${heroBg})` }} aria-hidden="true" />
+        <div className={heroStyles.hero__content}>
+          <h1 className={heroStyles.hero__panel}>Change is possible,</h1>
+          <div className={heroStyles.hero__panel}>and it comes from the</div>
+          <a href="/donate" className={heroStyles.hero__ribbon} role="link">power in people</a>
+          <span className={heroStyles['sr-only']}>Homepage hero: Change is possible, and it comes from the power in people</span>
+        </div>
+      </section>
+
+      <section className="quoteWWA fade-in-section">
+        <div className="container">
+          <h2>WHO WE ARE</h2>
+          <p>We are dedicated to empowering women with disabilities by promoting inclusion, protecting rights, and expanding access to opportunities that support leadership, education, employment, and personal growth.</p> 
+            <p>Through advocacy, collaboration, and community engagement, we work to challenge barriers and create a society where women with disabilities can participate fully, lead confidently, and thrive with dignity and equality..</p>
+          <div className="cta-buttons">
+            <Link to="/get-involved">
+              <button className="cta-btn primary">READ MORE</button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Latest News Section */}
       <section className="latest-news fade-in-section">

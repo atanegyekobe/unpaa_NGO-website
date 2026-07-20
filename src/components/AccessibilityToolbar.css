@@ -402,7 +402,8 @@ body.high-contrast img {
 
 body.high-contrast .hero,
 body.high-contrast .featured-impact,
-body.high-contrast .home-cta {
+body.high-contrast .home-cta,
+body.high-contrast .quoteWWA {
   background: #000 !important;
 }
 
